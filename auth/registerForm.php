@@ -1,3 +1,15 @@
+<?php
+    require_once "register.php";
+    ob_start();
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $reg =new Register();
+        $reg->register();
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,7 +128,7 @@
 
         <h1>Register</h1>
 
-        <form method="POST">
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" placeholder="username" required />
