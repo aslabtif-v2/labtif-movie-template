@@ -1,3 +1,18 @@
+<?php
+$is_logged_in = isset($_SESSION['email']);
+require_once "auth/Session.php";
+
+$s = new Session();
+
+if(isset($_POST['logout'])){
+  session_destroy();
+  header("location:index.php");
+  exit;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
